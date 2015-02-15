@@ -19,6 +19,10 @@ def main():
 
 	stockCorr = correlation(df)
 	print stockCorr
+
+	#writes correlations to CSV, change header and index to false for just data
+	stockCorr.to_csv("output.csv", header=True, index=True, na_rep=" ")
+
 	graph(stockCorr)
 
 def correlation(df):
